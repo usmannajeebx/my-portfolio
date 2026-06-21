@@ -1,0 +1,51 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #020617;
+  --foreground: #ffffff;
+}
+
+body {
+  font-family: 'Satoshi', sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 2026 Grainy Texture */
+.grainy-bg::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+.glass-card {
+  @apply bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-3xl;
+}
